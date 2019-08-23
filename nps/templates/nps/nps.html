@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<table class="table">
+    <caption>총수익: {{ sum }}</caption>
+    <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="col">코드</th>
+        <th scope="col">종목명</th>
+        <th scope="col">평가액</th>
+        <th scope="col">자산군 내 비중</th>
+        <th scope="col">지분율</th>
+        <th scope="col">시가총액</th>
+        <th scope="col">과거 가치</th>
+        <th scope="col">현재 가치</th>
+        <th scope="col">수익률</th>
+        <th scope="col">수익</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for j in data2 %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ j.code }}</td>
+            <td>{{ j.name.name }}</td>
+            <td>{{ j.name.ex_value }}</td>
+            <td>{{ j.name.asset_rate }}</td>
+            <td>{{ j.name.share }}</td>
+            <td>{{ j.value }}</td>
+            <td>{{ j.name.past }}</td>
+            <td>{{ j.name.now }}</td>
+            <td>{{ j.name.rate }} %</td>
+            <td>{{ j.name.benefit }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
