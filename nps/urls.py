@@ -5,6 +5,6 @@ from nps import views
 app_name = 'nps'
 
 urlpatterns = [
-    path('', views.home),
-    path('debug', views.home2),
+    path('debug', views.home),
+    path('', views.home2),
 ]
